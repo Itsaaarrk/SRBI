@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_VIEWS" targetNamespace="http://tempuri.org/DS_VIEWS.xsd" xmlns:mstns="http://tempuri.org/DS_VIEWS.xsd" xmlns="http://tempuri.org/DS_VIEWS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="PRAMASTERDATABASEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PRAMASTERDATABASEConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SRBI.My.MySettings.GlobalReference.Default.PRAMASTERDATABASEConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V1VW_USERACCEMPLOYEETableAdapter" GeneratorDataComponentClassName="V1VW_USERACCEMPLOYEETableAdapter" Name="V1VW_USERACCEMPLOYEE" UserDataComponentName="V1VW_USERACCEMPLOYEETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PRAMASTERDATABASEConnectionString (MySettings)" DbObjectName="PRAMASTERDATABASE.dbo.V1VW_USERACCEMPLOYEE" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        V1VW_USERACCEMPLOYEE.*
+FROM            V1VW_USERACCEMPLOYEE</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UAC_USERNAME" DataSetColumn="UAC_USERNAME" />
+              <Mapping SourceColumn="UAC_PASSWORD" DataSetColumn="UAC_PASSWORD" />
+              <Mapping SourceColumn="UAC_PASSWORD_UNENC" DataSetColumn="UAC_PASSWORD_UNENC" />
+              <Mapping SourceColumn="FULLNAME" DataSetColumn="FULLNAME" />
+              <Mapping SourceColumn="HRIS_EMPNO" DataSetColumn="HRIS_EMPNO" />
+              <Mapping SourceColumn="HRIS_EMPLNAME" DataSetColumn="HRIS_EMPLNAME" />
+              <Mapping SourceColumn="HRIS_EMPFNAME" DataSetColumn="HRIS_EMPFNAME" />
+              <Mapping SourceColumn="HRIS_EMPMNAME" DataSetColumn="HRIS_EMPMNAME" />
+              <Mapping SourceColumn="HEDV_DATE" DataSetColumn="HEDV_DATE" />
+              <Mapping SourceColumn="HDIVS_CODE" DataSetColumn="HDIVS_CODE" />
+              <Mapping SourceColumn="HDPT_CODE" DataSetColumn="HDPT_CODE" />
+              <Mapping SourceColumn="HDIV_DIVISION" DataSetColumn="HDIV_DIVISION" />
+              <Mapping SourceColumn="HDPT_DEPARTMENT" DataSetColumn="HDPT_DEPARTMENT" />
+              <Mapping SourceColumn="MAXDATE" DataSetColumn="MAXDATE" />
+              <Mapping SourceColumn="UAC_ISACTIVE" DataSetColumn="UAC_ISACTIVE" />
+              <Mapping SourceColumn="UAC_ISLOGGED" DataSetColumn="UAC_ISLOGGED" />
+              <Mapping SourceColumn="UAC_TYPE" DataSetColumn="UAC_TYPE" />
+              <Mapping SourceColumn="UAC_HINT" DataSetColumn="UAC_HINT" />
+              <Mapping SourceColumn="UAC_ISDEVELOPER" DataSetColumn="UAC_ISDEVELOPER" />
+              <Mapping SourceColumn="EMP_POSITION" DataSetColumn="EMP_POSITION" />
+              <Mapping SourceColumn="EMP_PHOTO_ID" DataSetColumn="EMP_PHOTO_ID" />
+              <Mapping SourceColumn="ISINDV" DataSetColumn="ISINDV" />
+              <Mapping SourceColumn="IS_CUSTODIAN" DataSetColumn="IS_CUSTODIAN" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="PRAMASTERDATABASEConnectionString (MySettings)" DbObjectName="PRAMASTERDATABASE.dbo.V1VW_USERACCEMPLOYEE" DbObjectType="View" GenerateShortCommands="true" GeneratorSourceName="SQ_DIVISION_DESC" Modifier="Public" Name="SQ_DIVISION_DESC" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="SQ_DIVISION_DESC">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        HDIV_DIVISION
+FROM            V1VW_USERACCEMPLOYEE
+WHERE        (UAC_USERNAME = @UAC_USERNAME)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UAC_USERNAME" ColumnName="UAC_USERNAME" DataSourceName="PRAMASTERDATABASE.dbo.V1VW_USERACCEMPLOYEE" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@UAC_USERNAME" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="UAC_USERNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PRAMASTERDATABASEConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="SQ_EMP_DEPT_DIV" Modifier="Public" Name="SQ_EMP_DEPT_DIV" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="SQ_EMP_DEPT_DIV">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        HDPT_CODE +' - ' + HDIVS_CODE
+FROM            V1VW_USERACCEMPLOYEE WHERE UAC_USERNAME=@UAC_USERNAME</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UAC_USERNAME" ColumnName="UAC_USERNAME" DataSourceName="PRAMASTERDATABASE.dbo.V1VW_USERACCEMPLOYEE" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@UAC_USERNAME" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="UAC_USERNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PRAMASTERDATABASEConnectionString (MySettings)" DbObjectName="PRAMASTERDATABASE.dbo.V1VW_USERACCEMPLOYEE" DbObjectType="View" GenerateShortCommands="true" GeneratorSourceName="SQ_POSITION" Modifier="Public" Name="SQ_POSITION" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="SQ_POSITION">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EMP_POSITION
+FROM            V1VW_USERACCEMPLOYEE
+WHERE        (UAC_USERNAME = @UAC_USERNAME)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UAC_USERNAME" ColumnName="UAC_USERNAME" DataSourceName="PRAMASTERDATABASE.dbo.V1VW_USERACCEMPLOYEE" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@UAC_USERNAME" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="UAC_USERNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_VIEWS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_VIEWS" msprop:Generator_UserDSName="DS_VIEWS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V1VW_USERACCEMPLOYEE" msprop:Generator_TableClassName="V1VW_USERACCEMPLOYEEDataTable" msprop:Generator_TableVarName="tableV1VW_USERACCEMPLOYEE" msprop:Generator_TablePropName="V1VW_USERACCEMPLOYEE" msprop:Generator_RowDeletingName="V1VW_USERACCEMPLOYEERowDeleting" msprop:Generator_RowChangingName="V1VW_USERACCEMPLOYEERowChanging" msprop:Generator_RowEvHandlerName="V1VW_USERACCEMPLOYEERowChangeEventHandler" msprop:Generator_RowDeletedName="V1VW_USERACCEMPLOYEERowDeleted" msprop:Generator_UserTableName="V1VW_USERACCEMPLOYEE" msprop:Generator_RowChangedName="V1VW_USERACCEMPLOYEERowChanged" msprop:Generator_RowEvArgName="V1VW_USERACCEMPLOYEERowChangeEvent" msprop:Generator_RowClassName="V1VW_USERACCEMPLOYEERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UAC_USERNAME" msprop:Generator_ColumnVarNameInTable="columnUAC_USERNAME" msprop:Generator_ColumnPropNameInRow="UAC_USERNAME" msprop:Generator_ColumnPropNameInTable="UAC_USERNAMEColumn" msprop:Generator_UserColumnName="UAC_USERNAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UAC_PASSWORD" msprop:Generator_ColumnVarNameInTable="columnUAC_PASSWORD" msprop:Generator_ColumnPropNameInRow="UAC_PASSWORD" msprop:Generator_ColumnPropNameInTable="UAC_PASSWORDColumn" msprop:Generator_UserColumnName="UAC_PASSWORD">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UAC_PASSWORD_UNENC" msprop:Generator_ColumnVarNameInTable="columnUAC_PASSWORD_UNENC" msprop:Generator_ColumnPropNameInRow="UAC_PASSWORD_UNENC" msprop:Generator_ColumnPropNameInTable="UAC_PASSWORD_UNENCColumn" msprop:Generator_UserColumnName="UAC_PASSWORD_UNENC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FULLNAME" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLNAME" msprop:Generator_ColumnPropNameInRow="FULLNAME" msprop:Generator_ColumnPropNameInTable="FULLNAMEColumn" msprop:Generator_UserColumnName="FULLNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HRIS_EMPNO" msprop:Generator_ColumnVarNameInTable="columnHRIS_EMPNO" msprop:Generator_ColumnPropNameInRow="HRIS_EMPNO" msprop:Generator_ColumnPropNameInTable="HRIS_EMPNOColumn" msprop:Generator_UserColumnName="HRIS_EMPNO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HRIS_EMPLNAME" msprop:Generator_ColumnVarNameInTable="columnHRIS_EMPLNAME" msprop:Generator_ColumnPropNameInRow="HRIS_EMPLNAME" msprop:Generator_ColumnPropNameInTable="HRIS_EMPLNAMEColumn" msprop:Generator_UserColumnName="HRIS_EMPLNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HRIS_EMPFNAME" msprop:Generator_ColumnVarNameInTable="columnHRIS_EMPFNAME" msprop:Generator_ColumnPropNameInRow="HRIS_EMPFNAME" msprop:Generator_ColumnPropNameInTable="HRIS_EMPFNAMEColumn" msprop:Generator_UserColumnName="HRIS_EMPFNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HRIS_EMPMNAME" msprop:Generator_ColumnVarNameInTable="columnHRIS_EMPMNAME" msprop:Generator_ColumnPropNameInRow="HRIS_EMPMNAME" msprop:Generator_ColumnPropNameInTable="HRIS_EMPMNAMEColumn" msprop:Generator_UserColumnName="HRIS_EMPMNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HEDV_DATE" msprop:Generator_ColumnVarNameInTable="columnHEDV_DATE" msprop:Generator_ColumnPropNameInRow="HEDV_DATE" msprop:Generator_ColumnPropNameInTable="HEDV_DATEColumn" msprop:Generator_UserColumnName="HEDV_DATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="HDIVS_CODE" msprop:Generator_ColumnVarNameInTable="columnHDIVS_CODE" msprop:Generator_ColumnPropNameInRow="HDIVS_CODE" msprop:Generator_ColumnPropNameInTable="HDIVS_CODEColumn" msprop:Generator_UserColumnName="HDIVS_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HDPT_CODE" msprop:Generator_ColumnVarNameInTable="columnHDPT_CODE" msprop:Generator_ColumnPropNameInRow="HDPT_CODE" msprop:Generator_ColumnPropNameInTable="HDPT_CODEColumn" msprop:Generator_UserColumnName="HDPT_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HDIV_DIVISION" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHDIV_DIVISION" msprop:Generator_ColumnPropNameInRow="HDIV_DIVISION" msprop:Generator_ColumnPropNameInTable="HDIV_DIVISIONColumn" msprop:Generator_UserColumnName="HDIV_DIVISION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HDPT_DEPARTMENT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHDPT_DEPARTMENT" msprop:Generator_ColumnPropNameInRow="HDPT_DEPARTMENT" msprop:Generator_ColumnPropNameInTable="HDPT_DEPARTMENTColumn" msprop:Generator_UserColumnName="HDPT_DEPARTMENT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAXDATE" msprop:Generator_ColumnVarNameInTable="columnMAXDATE" msprop:Generator_ColumnPropNameInRow="MAXDATE" msprop:Generator_ColumnPropNameInTable="MAXDATEColumn" msprop:Generator_UserColumnName="MAXDATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UAC_ISACTIVE" msprop:Generator_ColumnVarNameInTable="columnUAC_ISACTIVE" msprop:Generator_ColumnPropNameInRow="UAC_ISACTIVE" msprop:Generator_ColumnPropNameInTable="UAC_ISACTIVEColumn" msprop:Generator_UserColumnName="UAC_ISACTIVE" type="xs:boolean" />
+              <xs:element name="UAC_ISLOGGED" msprop:Generator_ColumnVarNameInTable="columnUAC_ISLOGGED" msprop:Generator_ColumnPropNameInRow="UAC_ISLOGGED" msprop:Generator_ColumnPropNameInTable="UAC_ISLOGGEDColumn" msprop:Generator_UserColumnName="UAC_ISLOGGED" type="xs:boolean" />
+              <xs:element name="UAC_TYPE" msprop:Generator_ColumnVarNameInTable="columnUAC_TYPE" msprop:Generator_ColumnPropNameInRow="UAC_TYPE" msprop:Generator_ColumnPropNameInTable="UAC_TYPEColumn" msprop:Generator_UserColumnName="UAC_TYPE" type="xs:int" />
+              <xs:element name="UAC_HINT" msprop:Generator_ColumnVarNameInTable="columnUAC_HINT" msprop:Generator_ColumnPropNameInRow="UAC_HINT" msprop:Generator_ColumnPropNameInTable="UAC_HINTColumn" msprop:Generator_UserColumnName="UAC_HINT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UAC_ISDEVELOPER" msprop:Generator_ColumnVarNameInTable="columnUAC_ISDEVELOPER" msprop:Generator_ColumnPropNameInRow="UAC_ISDEVELOPER" msprop:Generator_ColumnPropNameInTable="UAC_ISDEVELOPERColumn" msprop:Generator_UserColumnName="UAC_ISDEVELOPER" type="xs:boolean" minOccurs="0" />
+              <xs:element name="EMP_POSITION" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEMP_POSITION" msprop:Generator_ColumnPropNameInRow="EMP_POSITION" msprop:Generator_ColumnPropNameInTable="EMP_POSITIONColumn" msprop:Generator_UserColumnName="EMP_POSITION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMP_PHOTO_ID" msprop:Generator_ColumnVarNameInTable="columnEMP_PHOTO_ID" msprop:Generator_ColumnPropNameInRow="EMP_PHOTO_ID" msprop:Generator_ColumnPropNameInTable="EMP_PHOTO_IDColumn" msprop:Generator_UserColumnName="EMP_PHOTO_ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ISINDV" msprop:Generator_ColumnVarNameInTable="columnISINDV" msprop:Generator_ColumnPropNameInRow="ISINDV" msprop:Generator_ColumnPropNameInTable="ISINDVColumn" msprop:Generator_UserColumnName="ISINDV" type="xs:int" minOccurs="0" />
+              <xs:element name="IS_CUSTODIAN" msprop:Generator_ColumnVarNameInTable="columnIS_CUSTODIAN" msprop:Generator_ColumnPropNameInRow="IS_CUSTODIAN" msprop:Generator_ColumnPropNameInTable="IS_CUSTODIANColumn" msprop:Generator_UserColumnName="IS_CUSTODIAN" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
