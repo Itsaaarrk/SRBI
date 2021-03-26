@@ -1,8 +1,9 @@
 ﻿Imports System.Net
 Imports System.Net.Mail
+Imports CrystalDecisions.Shared
 
 Public Class FRM_EM_2_BI
-
+    Dim pdfpath As String
 
 #Region "START ##### FORM DRAG AND DROP, MINIMIZE, CLOSE"
     Dim drag As Boolean
@@ -51,82 +52,105 @@ Public Class FRM_EM_2_BI
 #End Region
 
 #Region "FUNCTION"
+
+
+#Region "TO PDF"
+    Sub TOPDF()
+        ' Dim strExportFile As String = Application.StartupPath() & RandomCode() & ".pdf"
+        pdfpath = Application.StartupPath() & "\Media_Files\PDFs\" & RandomCode() & ".xlsx"
+        Try
+            rptDoc = New RPT_TPL
+            rptDoc.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile
+            rptDoc.ExportOptions.ExportFormatType = ExportFormatType.Excel
+
+            Dim objOptions As DiskFileDestinationOptions = New DiskFileDestinationOptions()
+            objOptions.DiskFileName = pdfpath
+            rptDoc.ExportOptions.DestinationOptions = objOptions
+            '   SPM4_TRP_LISTTableAdapter.Fill(DS_STOREDPROC.SPM4_TRP_LIST, TXT_SEARCH.Text, WTXT_FROM.Text, WTXT_TO.Text)
+            rptDoc.SetDataSource(DS_STOREDPROC.SPM4_TRP_LIST.DataSet)
+            CR_VIEWER.ReportSource = rptDoc
+            rptDoc.Export()
+        Catch ex As Exception
+            ERRLOG.WriteToErrorLog(ex.Message, ex.StackTrace, "REGION: EXPORT AS DOC")
+            NotificationManager.Show(Me, "Sending email failed" & vbNewLine & ex.Message, Color.Red, 6000)
+        End Try
+    End Sub
+#End Region
+
     Sub EMAILCONTENT()
         Try
-            'Dim EmailMessage As New MailMessage()
-            '   Dim FULLIMG As LinkedResource = New LinkedResource(strExportFileIMG & ".png", "image/png")
-
-            'FULLIMG.ContentId = "FULLIMG"
-
-            'EmailMessage.From = New MailAddress(Trim(My.Settings.HOSTEMAILADD))
-            'EmailMessage.To.Add(Trim(WTXT_APPEMAILADD.Text))
-            'EmailMessage.Subject = My.Settings.EMAILSUBJECT
-            'EmailMessage.IsBodyHtml = True
-
-            'EmailMessage.Body = " <div style='width: 100%;'>
-            '                                                     <img src=cid:FULLIMG width='100%'>
-            '                                                          </div>"
-            '' CREATE ALTERNATIVE VIEW AS HTML
-            'Dim av1 As AlternateView = AlternateView.CreateAlternateViewFromString(EmailMessage.Body, Nothing, MediaTypeNames.Text.Html)
-            'av1.LinkedResources.Add(FULLIMG)
-            'EmailMessage.AlternateViews.Add(av1)
-
-            'Dim SMTP As New SmtpClient("smtp.gmail.com")
-            'SMTP.Port = 587
-            'SMTP.EnableSsl = True
-            'SMTP.Credentials = New System.Net.NetworkCredential(Trim(My.Settings.HOSTEMAILADD), Trim(My.Settings.HOSTEMAILPASS))
-            'SMTP.Send(EmailMessage)
 
 
-
-            'SMTP2GO
             Dim EmailMessage As New MailMessage()
-            Dim AttachmentFile As String = "C:\Users\M.A. De Castro\Documents\GitHub\SRBI\SRBI\SRBI\TRAVELPASS.pdf"
+            Dim AttachmentFile As String = pdfpath
             With EmailMessage
-                .From = New MailAddress(Trim("entryexit@pra.gov.ph"))
+                .From = New MailAddress(Trim("pra.entryexit@gmail.com"))
+                '  .To.Add(Trim("von.0030@gmail.com"))
                 .To.Add(Trim("mxaidocnv8@gmail.com"))
                 .Subject = "LIST OF SRRV HOLDERS ISSUED WITH TRAVEL PASS"
                 .IsBodyHtml = True
-                .Body = "<html>
+                .Body = " <html>
                             <head>
-                            <title>Page Title</title>
+                            <style>
+                             h3{font-family:Arial, Helvetica, sans-serif;}
+                                .psign{font-size:13pt;font-family:Georgia;padding-top:18px;}
+                                .gaz{text-decoration:none;}
+                                ol.let {list-style-type: lower-latin;font-weight:bold;font-size:13pt;font-family:Georgia}
+                            </style>
                             </head>
                             <body>
-                               <p style=""font-size:18pt;font-family:Georgia"">This refers to the list of retiree members who were issued Travel Pass as part of the requirement by the Beareau of Immigration for departing SRRV Holder.
+                                <p class=""psign"">This refers to the list of retiree members who were issued Travel Pass as part of the requirement by the Bureau of Immigration for departing SRRV Holder!
                                 </p>
-                                <p style=""font-size:18pt;font-family:Georgia;padding-top:8%;"">For your reference and information.</p>
-                                </p>
-                                <p style=""font-size:18pt;font-family:Georgia;padding-top:8%;"">LERMA G. ABESAMIS<br>
-                                Division Chief III - Servicing</p>
+                                <p class=""psign"">For your reference and information.</p>
+
+                                <p class=""psign"">LERMA G. ABESAMIS.</p>
                             </body>
-                        </html>"
+                        </html>                     "
                 .Attachments.Add(New Attachment(AttachmentFile))
             End With
 
-            Dim SMTP As New SmtpClient("mail.smtp2go.com")
-            SMTP.Port = 2525
+            Dim SMTP As New SmtpClient("smtp.gmail.com")
+            SMTP.Port = 587
             SMTP.EnableSsl = True
-            SMTP.Credentials = New Net.NetworkCredential("pramail.gov.ph", "pr@@Dm1n2017507")
+            SMTP.Credentials = New Net.NetworkCredential("pra.entryexit@gmail.com", "pr@@dm1n2017507")
             Try
                 SMTP.Send(EmailMessage)
-                NotificationManager.Show(Me, "Message Sent!", Color.Green, 3000)
+                NotificationManager.Show(Me, "Email Sent!", Color.Green, 3000)
                 ' Label1.Text = "Message sent"
             Catch ex As Exception
                 NotificationManager.Show(Me, "Sending Failed!", Color.Red, 3000)
             End Try
+
         Catch ex As Exception
             ERRLOG.WriteToErrorLog(ex.Message, ex.StackTrace, "REGION: SEND EMAIL")
             NotificationManager.Show(Me, "Sending email failed" & vbNewLine & ex.Message, Color.Red, 6000)
         End Try
-
     End Sub
+
+
+
+#Region "REPORT"
+    Sub LOAD_RPT()
+        rptDoc = New RPT_TPL
+        '    SPM4_TRP_LISTTableAdapter.Fill(DS_STOREDPROC.SPM4_TRP_LIST, TXT_SEARCH.Text, WTXT_FROM.Text, WTXT_TO.Text)
+        rptDoc.SetDataSource(DS_STOREDPROC.SPM4_TRP_LIST.DataSet)
+        CR_VIEWER.ReportSource = rptDoc
+    End Sub
+#End Region
+
+
 
 #End Region
 
 #Region "CLICK"
     Private Sub BTN_INVENTORY_MINIMIZE_Click(sender As Object, e As EventArgs) Handles BTN_F_MINIMIZE.Click,
                                                                                         BTN_F_CLOSE.Click,
-                                                                                        BTN_SEND_EMAIL.Click
+                                                                                        BTN_SEND_EMAIL.Click,
+                                                                                        WTXT_FROM.Click,
+                                                                                        WTXT_TO.Click,
+                                                                                        BTN_VIEW_LOGS.Click,
+                                                                                        BTN_SEARCH.Click
+
         Dim btn As Button = Nothing
         Dim txt As TextBox = Nothing
         If TypeOf sender Is Button Then
@@ -140,11 +164,23 @@ Public Class FRM_EM_2_BI
             Me.WindowState = FormWindowState.Minimized
         ElseIf btn Is BTN_F_CLOSE Then
             Me.Close()
+            FRM_LOGIN.Show()
+            FRM_LOGIN.TXT_USERNAME.Clear()
+            FRM_LOGIN.TXT_PASSWORD.Clear()
         ElseIf btn Is BTN_SEND_EMAIL Then
-            EMAILCONTENT()
+            TOPDF()
+            '  EMAILCONTENT()
+            If MsgBox("Are you sure you want to send this list?", vbYesNo, "CONFIRMATION") = vbYes Then
+
+            End If
         ElseIf txt Is WTXT_FROM Or txt Is WTXT_TO Then
             TXTDATE = CType(sender, TextBox)
             FRM_DATAENTRY.ShowDialog()
+        ElseIf btn Is BTN_VIEW_LOGS Then
+            Me.Hide()
+            FRM_RET_LOGS.Show()
+        ElseIf btn Is BTN_SEARCH Then
+            LOAD_RPT()
         End If
 
     End Sub
@@ -152,6 +188,7 @@ Public Class FRM_EM_2_BI
 
 #Region "LOAD"
     Private Sub FRM_EM_2_BI_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.DT_SERVERDATETableAdapter.Fill(Me.DS_STOREDPROC.DT_SERVERDATE)
         CB_FILTERBY.SelectedIndex = 0
     End Sub
 
@@ -161,17 +198,21 @@ Public Class FRM_EM_2_BI
     Private Sub CB_FILTERBY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_FILTERBY.SelectedIndexChanged
         If CB_FILTERBY.SelectedIndex = 3 Then
             PNL_CUSTOM.Visible = True
-            WTXT_FROM.Clear()
-            WTXT_TO.Clear()
         Else
             PNL_CUSTOM.Visible = False
         End If
     End Sub
 #End Region
 
-#Region "KEYPRESS"
+#Region "KEYPRESS/KEYDOWN"
     Private Sub WTXT_FROM_KeyPress(sender As Object, e As KeyPressEventArgs) Handles WTXT_TO.KeyPress, WTXT_FROM.KeyPress
         e.Handled = True
+    End Sub
+
+    Private Sub TXT_SEARCH_KeyDown(sender As Object, e As KeyEventArgs) Handles TXT_SEARCH.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            LOAD_RPT()
+        End If
     End Sub
 #End Region
 

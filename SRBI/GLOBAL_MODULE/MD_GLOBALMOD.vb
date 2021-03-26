@@ -1,6 +1,7 @@
 ﻿Imports System.Drawing.Imaging
 Imports System.IO
 Imports System.Text
+Imports ZXing
 'Imports ThoughtWorks.QRCode.Codec
 Module MD_GLOBALMOD
     Public Function GetCurrentAge(ByVal dob As Date) As Integer
@@ -141,7 +142,7 @@ Module MD_GLOBALMOD
         Dim characters As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         Dim rand As New Random
         Dim sb As New StringBuilder
-        For i As Integer = 1 To 6
+        For i As Integer = 1 To 9
             Dim idx As Integer = rand.Next(0, 35)
             sb.Append(characters.Substring(idx, 1))
         Next
@@ -308,5 +309,20 @@ Module MD_GLOBALMOD
 
 #End Region
 
+    Public Function GenerateCode(name As String) As String
+        Dim writer = New BarcodeWriter()
+        writer.Format = BarcodeFormat.QR_CODE
+        Dim result = writer.Write(name)
+        Dim path As String = Application.StartupPath() + "\Media_Files\QRs\" & name & ".jpg"
+        Dim barcodeBitmap = New Bitmap(result)
 
+        Using memory As New MemoryStream()
+            Using fs As New FileStream(path, FileMode.Create, FileAccess.ReadWrite)
+                barcodeBitmap.Save(memory, ImageFormat.Jpeg)
+                Dim bytes As Byte() = memory.ToArray()
+                fs.Write(bytes, 0, bytes.Length)
+            End Using
+        End Using
+        Return path
+    End Function
 End Module

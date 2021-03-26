@@ -78,7 +78,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("1.0")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1.2")>  _
         Public Property APP_VER2() As String
             Get
                 Return CType(Me("APP_VER2"),String)
@@ -86,6 +86,17 @@ Namespace My
             Set
                 Me("APP_VER2") = value
             End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=sql5050.site4now.net;Initial Catalog=DB_A6DCAE_pra;Persist Security I"& _ 
+            "nfo=True;User ID=DB_A6DCAE_pra_admin;Password=Avinnovz143")>  _
+        Public ReadOnly Property DB_A6DCAE_praConnectionString() As String
+            Get
+                Return CType(Me("DB_A6DCAE_praConnectionString"),String)
+            End Get
         End Property
     End Class
 End Namespace

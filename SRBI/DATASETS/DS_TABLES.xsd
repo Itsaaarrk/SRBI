@@ -2,10 +2,11 @@
 <xs:schema id="DS_TABLES" targetNamespace="http://tempuri.org/DS_TABLES.xsd" xmlns:mstns="http://tempuri.org/DS_TABLES.xsd" xmlns="http://tempuri.org/DS_TABLES.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="PRAJO_DATABASEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PRAJO_DATABASEConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SRBI.My.MySettings.GlobalReference.Default.PRAJO_DATABASEConnectionString" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="PRAMASTERDATABASEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PRAMASTERDATABASEConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SRBI.My.MySettings.GlobalReference.Default.PRAMASTERDATABASEConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DB_A6DCAE_praConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_A6DCAE_praConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SRBI.My.MySettings.GlobalReference.Default.DB_A6DCAE_praConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SPM4_PDS_LISTTableAdapter" GeneratorDataComponentClassName="SPM4_PDS_LISTTableAdapter" Name="SPM4_PDS_LIST" UserDataComponentName="SPM4_PDS_LISTTableAdapter">
@@ -229,7 +230,7 @@ SELECT UAC_USERNAME, UAC_PASSWORD, UAC_ISACTIVE, UAC_ISLOGGED, UAC_TYPE, UAC_HIN
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PRAMASTERDATABASEConnectionString (MySettings)" DbObjectName="PRAMASTERDATABASE.dbo.V1VW_USERACCEMPLOYEE" DbObjectType="View" GenerateShortCommands="true" GeneratorSourceName="SQ_DIVISION_DESC" Modifier="Public" Name="SQ_DIVISION_DESC" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="SQ_DIVISION_DESC">
+              <DbSource ConnectionRef="PRAMASTERDATABASEConnectionString (MySettings)" DbObjectName="PRAMASTERDATABASE.dbo.V1VW_USERACCEMPLOYEE" DbObjectType="View" GenerateShortCommands="true" GeneratorSourceName="SQ_DIVISION_DESC" Modifier="Public" Name="SQ_DIVISION_DESC" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="SQ_DIVISION_DESC">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        HDIV_DIVISION
@@ -241,7 +242,7 @@ WHERE        (UAC_USERNAME = @UAC_USERNAME)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PRAMASTERDATABASEConnectionString (MySettings)" DbObjectName="PRAMASTERDATABASE.dbo.tblV1_HRISEMPDIVISION" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SQ_DIVS_CODE" Modifier="Public" Name="SQ_DIVS_CODE" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="SQ_DIVS_CODE">
+              <DbSource ConnectionRef="PRAMASTERDATABASEConnectionString (MySettings)" DbObjectName="PRAMASTERDATABASE.dbo.tblV1_HRISEMPDIVISION" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SQ_DIVS_CODE" Modifier="Public" Name="SQ_DIVS_CODE" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="SQ_DIVS_CODE">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        D.HDIVS_CODE
@@ -253,7 +254,7 @@ FROM            tblV1_USERACCOUNT AS U INNER JOIN
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PRAMASTERDATABASEConnectionString (MySettings)" DbObjectName="PRAMASTERDATABASE.dbo.tblV1_USERACCOUNT" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SQ_GETUACPASSWORD" Modifier="Public" Name="SQ_GETUACPASSWORD" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="SQ_GETUACPASSWORD">
+              <DbSource ConnectionRef="PRAMASTERDATABASEConnectionString (MySettings)" DbObjectName="PRAMASTERDATABASE.dbo.tblV1_USERACCOUNT" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SQ_GETUACPASSWORD" Modifier="Public" Name="SQ_GETUACPASSWORD" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="SQ_GETUACPASSWORD">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT  UAC_PASSWORD FROM tblV1_USERACCOUNT WHERE UAC_PASSWORD=@UAC_PASSWORD</CommandText>
@@ -273,7 +274,7 @@ FROM            tblV1_USERACCOUNT AS U INNER JOIN
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PRAMASTERDATABASEConnectionString (MySettings)" DbObjectName="PRAMASTERDATABASE.dbo.tblV1_USERACCOUNT" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SQ_UHRIS_EMPNO" Modifier="Public" Name="SQ_UHRIS_EMPNO" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="SQ_UHRIS_EMPNO">
+              <DbSource ConnectionRef="PRAMASTERDATABASEConnectionString (MySettings)" DbObjectName="PRAMASTERDATABASE.dbo.tblV1_USERACCOUNT" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SQ_UHRIS_EMPNO" Modifier="Public" Name="SQ_UHRIS_EMPNO" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="SQ_UHRIS_EMPNO">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        EMP_ID
@@ -285,7 +286,7 @@ WHERE        (UAC_USERNAME =@UAC_USERNAME)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PRAMASTERDATABASEConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UQ_USERLOGSTATUS" Modifier="Public" Name="UQ_USERLOGSTATUS" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UQ_USERLOGSTATUS">
+              <DbSource ConnectionRef="PRAMASTERDATABASEConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UQ_USERLOGSTATUS" Modifier="Public" Name="UQ_USERLOGSTATUS" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UQ_USERLOGSTATUS">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [tblV1_USERACCOUNT] SET  [UAC_ISLOGGED] = @UAC_ISLOGGED WHERE [UAC_USERNAME] = @UAC_USERNAME</CommandText>
@@ -370,6 +371,77 @@ SELECT UALG_DATETIMELOGGED, UAC_USERNAME, UALG_PCNAME, UALG_TYPE FROM tblV1_USER
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbML4_EMAIL_HISTTableAdapter" GeneratorDataComponentClassName="tbML4_EMAIL_HISTTableAdapter" Name="tbML4_EMAIL_HIST" UserDataComponentName="tbML4_EMAIL_HISTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DB_A6DCAE_praConnectionString (MySettings)" DbObjectName="DB_A6DCAE_pra.dbo.tbML4_EMAIL_HIST" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tbML4_EMAIL_HIST] WHERE (([DATE_CREATED] = @Original_DATE_CREATED) AND ([DPAR_REF_NUM] = @Original_DPAR_REF_NUM) AND ((@IsNull_EMAIL = 1 AND [EMAIL] IS NULL) OR ([EMAIL] = @Original_EMAIL)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_DATE_CREATED" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DATE_CREATED" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DPAR_REF_NUM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DPAR_REF_NUM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EMAIL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EMAIL" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_EMAIL" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMAIL" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [tbML4_EMAIL_HIST] ([DATE_CREATED], [DPAR_REF_NUM], [EMAIL]) VALUES (@DATE_CREATED, @DPAR_REF_NUM, @EMAIL);
+SELECT DATE_CREATED, DPAR_REF_NUM, EMAIL FROM tbML4_EMAIL_HIST WHERE (DATE_CREATED = @DATE_CREATED) AND (DPAR_REF_NUM = @DPAR_REF_NUM)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@DATE_CREATED" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DATE_CREATED" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DPAR_REF_NUM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DPAR_REF_NUM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EMAIL" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMAIL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DATE_CREATED, DPAR_REF_NUM, EMAIL
+FROM            tbML4_EMAIL_HIST</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tbML4_EMAIL_HIST] SET [DATE_CREATED] = @DATE_CREATED, [DPAR_REF_NUM] = @DPAR_REF_NUM, [EMAIL] = @EMAIL WHERE (([DATE_CREATED] = @Original_DATE_CREATED) AND ([DPAR_REF_NUM] = @Original_DPAR_REF_NUM) AND ((@IsNull_EMAIL = 1 AND [EMAIL] IS NULL) OR ([EMAIL] = @Original_EMAIL)));
+SELECT DATE_CREATED, DPAR_REF_NUM, EMAIL FROM tbML4_EMAIL_HIST WHERE (DATE_CREATED = @DATE_CREATED) AND (DPAR_REF_NUM = @DPAR_REF_NUM)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@DATE_CREATED" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DATE_CREATED" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DPAR_REF_NUM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DPAR_REF_NUM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EMAIL" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMAIL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_DATE_CREATED" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DATE_CREATED" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DPAR_REF_NUM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DPAR_REF_NUM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EMAIL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EMAIL" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_EMAIL" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EMAIL" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DATE_CREATED" DataSetColumn="DATE_CREATED" />
+              <Mapping SourceColumn="DPAR_REF_NUM" DataSetColumn="DPAR_REF_NUM" />
+              <Mapping SourceColumn="EMAIL" DataSetColumn="EMAIL" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DB_A6DCAE_praConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="IQ_EMAIL_HIST" Modifier="Public" Name="IQ_EMAIL_HIST" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="IQ_EMAIL_HIST">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO tbML4_EMAIL_HIST
+                         (DPAR_REF_NUM, EMAIL)
+VALUES        (@DPAR_REF_NUM,@EMAIL); 
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DPAR_REF_NUM" ColumnName="DPAR_REF_NUM" DataSourceName="DB_A6DCAE_pra.dbo.tbML4_EMAIL_HIST" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@DPAR_REF_NUM" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="DPAR_REF_NUM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="EMAIL" ColumnName="EMAIL" DataSourceName="DB_A6DCAE_pra.dbo.tbML4_EMAIL_HIST" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@EMAIL" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="EMAIL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -378,7 +450,7 @@ SELECT UALG_DATETIMELOGGED, UAC_USERNAME, UALG_PCNAME, UALG_TYPE FROM tblV1_USER
   <xs:element name="DS_TABLES" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_TABLES" msprop:Generator_UserDSName="DS_TABLES">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SPM4_PDS_LIST" msprop:Generator_TableClassName="SPM4_PDS_LISTDataTable" msprop:Generator_TableVarName="tableSPM4_PDS_LIST" msprop:Generator_TablePropName="SPM4_PDS_LIST" msprop:Generator_RowDeletingName="SPM4_PDS_LISTRowDeleting" msprop:Generator_RowChangingName="SPM4_PDS_LISTRowChanging" msprop:Generator_RowEvHandlerName="SPM4_PDS_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="SPM4_PDS_LISTRowDeleted" msprop:Generator_UserTableName="SPM4_PDS_LIST" msprop:Generator_RowChangedName="SPM4_PDS_LISTRowChanged" msprop:Generator_RowEvArgName="SPM4_PDS_LISTRowChangeEvent" msprop:Generator_RowClassName="SPM4_PDS_LISTRow">
+        <xs:element name="SPM4_PDS_LIST" msprop:Generator_TableClassName="SPM4_PDS_LISTDataTable" msprop:Generator_TableVarName="tableSPM4_PDS_LIST" msprop:Generator_RowChangedName="SPM4_PDS_LISTRowChanged" msprop:Generator_TablePropName="SPM4_PDS_LIST" msprop:Generator_RowDeletingName="SPM4_PDS_LISTRowDeleting" msprop:Generator_RowChangingName="SPM4_PDS_LISTRowChanging" msprop:Generator_RowEvHandlerName="SPM4_PDS_LISTRowChangeEventHandler" msprop:Generator_RowDeletedName="SPM4_PDS_LISTRowDeleted" msprop:Generator_RowClassName="SPM4_PDS_LISTRow" msprop:Generator_UserTableName="SPM4_PDS_LIST" msprop:Generator_RowEvArgName="SPM4_PDS_LISTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FULLNAME" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFULLNAME" msprop:Generator_ColumnPropNameInRow="FULLNAME" msprop:Generator_ColumnPropNameInTable="FULLNAMEColumn" msprop:Generator_UserColumnName="FULLNAME" minOccurs="0">
@@ -648,7 +720,7 @@ SELECT UALG_DATETIMELOGGED, UAC_USERNAME, UALG_PCNAME, UALG_TYPE FROM tblV1_USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblV1_USERACCOUNT" msprop:Generator_TableClassName="tblV1_USERACCOUNTDataTable" msprop:Generator_TableVarName="tabletblV1_USERACCOUNT" msprop:Generator_TablePropName="tblV1_USERACCOUNT" msprop:Generator_RowDeletingName="tblV1_USERACCOUNTRowDeleting" msprop:Generator_RowChangingName="tblV1_USERACCOUNTRowChanging" msprop:Generator_RowEvHandlerName="tblV1_USERACCOUNTRowChangeEventHandler" msprop:Generator_RowDeletedName="tblV1_USERACCOUNTRowDeleted" msprop:Generator_UserTableName="tblV1_USERACCOUNT" msprop:Generator_RowChangedName="tblV1_USERACCOUNTRowChanged" msprop:Generator_RowEvArgName="tblV1_USERACCOUNTRowChangeEvent" msprop:Generator_RowClassName="tblV1_USERACCOUNTRow">
+        <xs:element name="tblV1_USERACCOUNT" msprop:Generator_TableClassName="tblV1_USERACCOUNTDataTable" msprop:Generator_TableVarName="tabletblV1_USERACCOUNT" msprop:Generator_RowChangedName="tblV1_USERACCOUNTRowChanged" msprop:Generator_TablePropName="tblV1_USERACCOUNT" msprop:Generator_RowDeletingName="tblV1_USERACCOUNTRowDeleting" msprop:Generator_RowChangingName="tblV1_USERACCOUNTRowChanging" msprop:Generator_RowEvHandlerName="tblV1_USERACCOUNTRowChangeEventHandler" msprop:Generator_RowDeletedName="tblV1_USERACCOUNTRowDeleted" msprop:Generator_RowClassName="tblV1_USERACCOUNTRow" msprop:Generator_UserTableName="tblV1_USERACCOUNT" msprop:Generator_RowEvArgName="tblV1_USERACCOUNTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UAC_USERNAME" msprop:Generator_ColumnVarNameInTable="columnUAC_USERNAME" msprop:Generator_ColumnPropNameInRow="UAC_USERNAME" msprop:Generator_ColumnPropNameInTable="UAC_USERNAMEColumn" msprop:Generator_UserColumnName="UAC_USERNAME">
@@ -724,7 +796,7 @@ SELECT UALG_DATETIMELOGGED, UAC_USERNAME, UALG_PCNAME, UALG_TYPE FROM tblV1_USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblV1_USERACCOUNTLOGS" msprop:Generator_TableClassName="tblV1_USERACCOUNTLOGSDataTable" msprop:Generator_TableVarName="tabletblV1_USERACCOUNTLOGS" msprop:Generator_TablePropName="tblV1_USERACCOUNTLOGS" msprop:Generator_RowDeletingName="tblV1_USERACCOUNTLOGSRowDeleting" msprop:Generator_RowChangingName="tblV1_USERACCOUNTLOGSRowChanging" msprop:Generator_RowEvHandlerName="tblV1_USERACCOUNTLOGSRowChangeEventHandler" msprop:Generator_RowDeletedName="tblV1_USERACCOUNTLOGSRowDeleted" msprop:Generator_UserTableName="tblV1_USERACCOUNTLOGS" msprop:Generator_RowChangedName="tblV1_USERACCOUNTLOGSRowChanged" msprop:Generator_RowEvArgName="tblV1_USERACCOUNTLOGSRowChangeEvent" msprop:Generator_RowClassName="tblV1_USERACCOUNTLOGSRow">
+        <xs:element name="tblV1_USERACCOUNTLOGS" msprop:Generator_TableClassName="tblV1_USERACCOUNTLOGSDataTable" msprop:Generator_TableVarName="tabletblV1_USERACCOUNTLOGS" msprop:Generator_RowChangedName="tblV1_USERACCOUNTLOGSRowChanged" msprop:Generator_TablePropName="tblV1_USERACCOUNTLOGS" msprop:Generator_RowDeletingName="tblV1_USERACCOUNTLOGSRowDeleting" msprop:Generator_RowChangingName="tblV1_USERACCOUNTLOGSRowChanging" msprop:Generator_RowEvHandlerName="tblV1_USERACCOUNTLOGSRowChangeEventHandler" msprop:Generator_RowDeletedName="tblV1_USERACCOUNTLOGSRowDeleted" msprop:Generator_RowClassName="tblV1_USERACCOUNTLOGSRow" msprop:Generator_UserTableName="tblV1_USERACCOUNTLOGS" msprop:Generator_RowEvArgName="tblV1_USERACCOUNTLOGSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UALG_DATETIMELOGGED" msprop:Generator_ColumnVarNameInTable="columnUALG_DATETIMELOGGED" msprop:Generator_ColumnPropNameInRow="UALG_DATETIMELOGGED" msprop:Generator_ColumnPropNameInTable="UALG_DATETIMELOGGEDColumn" msprop:Generator_UserColumnName="UALG_DATETIMELOGGED" type="xs:dateTime" />
@@ -746,6 +818,27 @@ SELECT UALG_DATETIMELOGGED, UAC_USERNAME, UALG_PCNAME, UALG_TYPE FROM tblV1_USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="tbML4_EMAIL_HIST" msprop:Generator_TableClassName="tbML4_EMAIL_HISTDataTable" msprop:Generator_TableVarName="tabletbML4_EMAIL_HIST" msprop:Generator_TablePropName="tbML4_EMAIL_HIST" msprop:Generator_RowDeletingName="tbML4_EMAIL_HISTRowDeleting" msprop:Generator_RowChangingName="tbML4_EMAIL_HISTRowChanging" msprop:Generator_RowEvHandlerName="tbML4_EMAIL_HISTRowChangeEventHandler" msprop:Generator_RowDeletedName="tbML4_EMAIL_HISTRowDeleted" msprop:Generator_UserTableName="tbML4_EMAIL_HIST" msprop:Generator_RowChangedName="tbML4_EMAIL_HISTRowChanged" msprop:Generator_RowEvArgName="tbML4_EMAIL_HISTRowChangeEvent" msprop:Generator_RowClassName="tbML4_EMAIL_HISTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DATE_CREATED" msprop:Generator_ColumnVarNameInTable="columnDATE_CREATED" msprop:Generator_ColumnPropNameInRow="DATE_CREATED" msprop:Generator_ColumnPropNameInTable="DATE_CREATEDColumn" msprop:Generator_UserColumnName="DATE_CREATED" type="xs:dateTime" />
+              <xs:element name="DPAR_REF_NUM" msprop:Generator_ColumnVarNameInTable="columnDPAR_REF_NUM" msprop:Generator_ColumnPropNameInRow="DPAR_REF_NUM" msprop:Generator_ColumnPropNameInTable="DPAR_REF_NUMColumn" msprop:Generator_UserColumnName="DPAR_REF_NUM">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMAIL" msprop:Generator_ColumnVarNameInTable="columnEMAIL" msprop:Generator_ColumnPropNameInRow="EMAIL" msprop:Generator_ColumnPropNameInTable="EMAILColumn" msprop:Generator_UserColumnName="EMAIL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -759,6 +852,11 @@ SELECT UALG_DATETIMELOGGED, UAC_USERNAME, UALG_PCNAME, UALG_TYPE FROM tblV1_USER
     <xs:unique name="tblV1_USERACCOUNTLOGS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:tblV1_USERACCOUNTLOGS" />
       <xs:field xpath="mstns:UALG_DATETIMELOGGED" />
+    </xs:unique>
+    <xs:unique name="tbML4_EMAIL_HIST_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbML4_EMAIL_HIST" />
+      <xs:field xpath="mstns:DATE_CREATED" />
+      <xs:field xpath="mstns:DPAR_REF_NUM" />
     </xs:unique>
   </xs:element>
 </xs:schema>

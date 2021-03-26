@@ -22,6 +22,7 @@ Partial Class FRM_EM_2_BI
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.PNL2 = New System.Windows.Forms.Panel()
         Me.PNL1 = New System.Windows.Forms.Panel()
         Me.PNL_LBL = New System.Windows.Forms.Label()
@@ -33,40 +34,50 @@ Partial Class FRM_EM_2_BI
         Me.BTN_Minimize = New System.Windows.Forms.Button()
         Me.BTN_CLOSE = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel9 = New System.Windows.Forms.Panel()
         Me.CR_VIEWER = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.BTN_VIEW_LOGS = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.CB_FILTERBY = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.CB_FILTERBY = New System.Windows.Forms.ComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.BTN_SEARCH = New System.Windows.Forms.Button()
+        Me.TXT_SEARCH = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.PNL_CUSTOM = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.TXT_SEARCH = New System.Windows.Forms.TextBox()
-        Me.BTN_SEARCH = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape78 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.BTN_SEND_EMAIL = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BTN_SEND_EMAIL = New System.Windows.Forms.Button()
+        Me.TableAdapterManager = New SRBI.DS_TABLESTableAdapters.TableAdapterManager()
+        Me.DS_STOREDPROC = New SRBI.DS_STOREDPROC()
+        Me.SPM4_TRP_LISTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SPM4_TRP_LISTTableAdapter = New SRBI.DS_STOREDPROCTableAdapters.SPM4_TRP_LISTTableAdapter()
         Me.WTXT_TO = New SRBI.WatermarkTextBox()
         Me.WTXT_FROM = New SRBI.WatermarkTextBox()
+        Me.DTSERVERDATEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DT_SERVERDATETableAdapter = New SRBI.DS_STOREDPROCTableAdapters.DT_SERVERDATETableAdapter()
         Me.PNL2.SuspendLayout()
         Me.PNL1.SuspendLayout()
         Me.PNL3.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel9.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel6.SuspendLayout()
-        Me.PNL_CUSTOM.SuspendLayout()
         Me.Panel7.SuspendLayout()
+        Me.PNL_CUSTOM.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        Me.Panel9.SuspendLayout()
+        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPM4_TRP_LISTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DTSERVERDATEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNL2
@@ -216,6 +227,16 @@ Partial Class FRM_EM_2_BI
         Me.Panel3.Size = New System.Drawing.Size(1052, 486)
         Me.Panel3.TabIndex = 1415
         '
+        'Panel9
+        '
+        Me.Panel9.Controls.Add(Me.CR_VIEWER)
+        Me.Panel9.Controls.Add(Me.BTN_VIEW_LOGS)
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel9.Location = New System.Drawing.Point(0, 0)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(1052, 486)
+        Me.Panel9.TabIndex = 2
+        '
         'CR_VIEWER
         '
         Me.CR_VIEWER.ActiveViewIndex = -1
@@ -235,6 +256,25 @@ Partial Class FRM_EM_2_BI
         Me.CR_VIEWER.TabIndex = 0
         Me.CR_VIEWER.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
+        'BTN_VIEW_LOGS
+        '
+        Me.BTN_VIEW_LOGS.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.BTN_VIEW_LOGS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTN_VIEW_LOGS.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.BTN_VIEW_LOGS.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue
+        Me.BTN_VIEW_LOGS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_VIEW_LOGS.Font = New System.Drawing.Font("Bahnschrift SemiBold Condensed", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BTN_VIEW_LOGS.ForeColor = System.Drawing.Color.White
+        Me.BTN_VIEW_LOGS.Location = New System.Drawing.Point(0, 460)
+        Me.BTN_VIEW_LOGS.Name = "BTN_VIEW_LOGS"
+        Me.BTN_VIEW_LOGS.Size = New System.Drawing.Size(1052, 26)
+        Me.BTN_VIEW_LOGS.TabIndex = 1413
+        Me.BTN_VIEW_LOGS.Text = "VIEW EMAIL LOGS"
+        Me.BTN_VIEW_LOGS.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BTN_VIEW_LOGS.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BTN_VIEW_LOGS.UseMnemonic = False
+        Me.BTN_VIEW_LOGS.UseVisualStyleBackColor = False
+        '
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.Label1)
@@ -244,6 +284,16 @@ Partial Class FRM_EM_2_BI
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(291, 38)
         Me.Panel4.TabIndex = 1416
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Bahnschrift Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(5, 11)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(61, 19)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "FILTER BY:"
         '
         'CB_FILTERBY
         '
@@ -256,16 +306,6 @@ Partial Class FRM_EM_2_BI
         Me.CB_FILTERBY.Name = "CB_FILTERBY"
         Me.CB_FILTERBY.Size = New System.Drawing.Size(218, 27)
         Me.CB_FILTERBY.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Bahnschrift Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(5, 11)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(61, 19)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "FILTER BY:"
         '
         'Panel1
         '
@@ -286,6 +326,50 @@ Partial Class FRM_EM_2_BI
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(761, 38)
         Me.Panel6.TabIndex = 1417
+        '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.BTN_SEARCH)
+        Me.Panel7.Controls.Add(Me.TXT_SEARCH)
+        Me.Panel7.Location = New System.Drawing.Point(217, 5)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(346, 28)
+        Me.Panel7.TabIndex = 3
+        '
+        'BTN_SEARCH
+        '
+        Me.BTN_SEARCH.BackColor = System.Drawing.Color.Transparent
+        Me.BTN_SEARCH.BackgroundImage = Global.SRBI.My.Resources.Resources.outline_search_black_18dp
+        Me.BTN_SEARCH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BTN_SEARCH.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTN_SEARCH.Dock = System.Windows.Forms.DockStyle.Right
+        Me.BTN_SEARCH.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray
+        Me.BTN_SEARCH.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTN_SEARCH.Font = New System.Drawing.Font("Bahnschrift SemiBold Condensed", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BTN_SEARCH.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.BTN_SEARCH.Location = New System.Drawing.Point(315, 0)
+        Me.BTN_SEARCH.Name = "BTN_SEARCH"
+        Me.BTN_SEARCH.Size = New System.Drawing.Size(31, 28)
+        Me.BTN_SEARCH.TabIndex = 1413
+        Me.BTN_SEARCH.UseVisualStyleBackColor = False
+        '
+        'TXT_SEARCH
+        '
+        Me.TXT_SEARCH.Font = New System.Drawing.Font("Bahnschrift SemiBold Condensed", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.TXT_SEARCH.Location = New System.Drawing.Point(0, 1)
+        Me.TXT_SEARCH.Name = "TXT_SEARCH"
+        Me.TXT_SEARCH.Size = New System.Drawing.Size(318, 27)
+        Me.TXT_SEARCH.TabIndex = 0
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Bahnschrift Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(171, 10)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(50, 19)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Search:"
         '
         'PNL_CUSTOM
         '
@@ -309,61 +393,6 @@ Partial Class FRM_EM_2_BI
         Me.Label2.Size = New System.Drawing.Size(11, 14)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "-"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Bahnschrift Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(171, 10)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(50, 19)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Search:"
-        '
-        'Panel7
-        '
-        Me.Panel7.Controls.Add(Me.BTN_SEARCH)
-        Me.Panel7.Controls.Add(Me.TXT_SEARCH)
-        Me.Panel7.Location = New System.Drawing.Point(217, 5)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(346, 28)
-        Me.Panel7.TabIndex = 3
-        '
-        'TXT_SEARCH
-        '
-        Me.TXT_SEARCH.Font = New System.Drawing.Font("Bahnschrift SemiBold Condensed", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TXT_SEARCH.Location = New System.Drawing.Point(0, 1)
-        Me.TXT_SEARCH.Name = "TXT_SEARCH"
-        Me.TXT_SEARCH.Size = New System.Drawing.Size(318, 27)
-        Me.TXT_SEARCH.TabIndex = 0
-        '
-        'BTN_SEARCH
-        '
-        Me.BTN_SEARCH.BackColor = System.Drawing.Color.Transparent
-        Me.BTN_SEARCH.BackgroundImage = Global.SRBI.My.Resources.Resources.outline_search_black_18dp
-        Me.BTN_SEARCH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BTN_SEARCH.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BTN_SEARCH.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BTN_SEARCH.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray
-        Me.BTN_SEARCH.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTN_SEARCH.Font = New System.Drawing.Font("Bahnschrift SemiBold Condensed", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BTN_SEARCH.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.BTN_SEARCH.Location = New System.Drawing.Point(315, 0)
-        Me.BTN_SEARCH.Name = "BTN_SEARCH"
-        Me.BTN_SEARCH.Size = New System.Drawing.Size(31, 28)
-        Me.BTN_SEARCH.TabIndex = 1413
-        Me.BTN_SEARCH.UseVisualStyleBackColor = False
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.Panel1)
-        Me.Panel2.Controls.Add(Me.Panel5)
-        Me.Panel2.Controls.Add(Me.Panel4)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 44)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1052, 38)
-        Me.Panel2.TabIndex = 1414
         '
         'ShapeContainer2
         '
@@ -393,6 +422,43 @@ Partial Class FRM_EM_2_BI
         Me.RectangleShape78.Name = "RectangleShape78"
         Me.RectangleShape78.Size = New System.Drawing.Size(69, 22)
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Panel1)
+        Me.Panel2.Controls.Add(Me.Panel5)
+        Me.Panel2.Controls.Add(Me.Panel4)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 44)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1052, 38)
+        Me.Panel2.TabIndex = 1414
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.Button1)
+        Me.Panel5.Controls.Add(Me.BTN_SEND_EMAIL)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel5.Location = New System.Drawing.Point(857, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(195, 38)
+        Me.Panel5.TabIndex = 1413
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackgroundImage = Global.SRBI.My.Resources.Resources.baseline_settings_black_18dp
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.LightSlateGray
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Bahnschrift SemiBold Condensed", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button1.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Button1.Location = New System.Drawing.Point(160, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(31, 31)
+        Me.Button1.TabIndex = 1414
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'BTN_SEND_EMAIL
         '
         Me.BTN_SEND_EMAIL.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -403,56 +469,37 @@ Partial Class FRM_EM_2_BI
         Me.BTN_SEND_EMAIL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTN_SEND_EMAIL.Font = New System.Drawing.Font("Bahnschrift SemiBold Condensed", 12.0!, System.Drawing.FontStyle.Bold)
         Me.BTN_SEND_EMAIL.ForeColor = System.Drawing.Color.White
-        Me.BTN_SEND_EMAIL.Location = New System.Drawing.Point(14, 3)
+        Me.BTN_SEND_EMAIL.Location = New System.Drawing.Point(13, 3)
         Me.BTN_SEND_EMAIL.Name = "BTN_SEND_EMAIL"
-        Me.BTN_SEND_EMAIL.Size = New System.Drawing.Size(178, 31)
+        Me.BTN_SEND_EMAIL.Size = New System.Drawing.Size(147, 31)
         Me.BTN_SEND_EMAIL.TabIndex = 1412
         Me.BTN_SEND_EMAIL.Text = "SEND EMAIL"
         Me.BTN_SEND_EMAIL.UseVisualStyleBackColor = False
         '
-        'Panel5
+        'TableAdapterManager
         '
-        Me.Panel5.Controls.Add(Me.BTN_SEND_EMAIL)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel5.Location = New System.Drawing.Point(857, 0)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(195, 38)
-        Me.Panel5.TabIndex = 1413
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.tblV1_USERACCOUNTLOGSTableAdapter = Nothing
+        Me.TableAdapterManager.tblV1_USERACCOUNTTableAdapter = Nothing
+        Me.TableAdapterManager.tbML4_EMAIL_HISTTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = SRBI.DS_TABLESTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'Panel9
+        'DS_STOREDPROC
         '
-        Me.Panel9.Controls.Add(Me.CR_VIEWER)
-        Me.Panel9.Controls.Add(Me.Button2)
-        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel9.Location = New System.Drawing.Point(0, 0)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(1052, 486)
-        Me.Panel9.TabIndex = 2
+        Me.DS_STOREDPROC.DataSetName = "DS_STOREDPROC"
+        Me.DS_STOREDPROC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'Button2
+        'SPM4_TRP_LISTTableAdapter
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Bahnschrift SemiBold Condensed", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(0, 460)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(1052, 26)
-        Me.Button2.TabIndex = 1413
-        Me.Button2.Text = "VIEW EMAIL LOGS"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button2.UseMnemonic = False
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.SPM4_TRP_LISTTableAdapter.ClearBeforeFill = True
         '
         'WTXT_TO
         '
         Me.WTXT_TO.BackColor = System.Drawing.Color.White
         Me.WTXT_TO.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.WTXT_TO.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.WTXT_TO.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DTSERVERDATEBindingSource, "CUR_DATE", True))
         Me.WTXT_TO.Font = New System.Drawing.Font("Bahnschrift Condensed", 11.25!)
         Me.WTXT_TO.Location = New System.Drawing.Point(92, 10)
         Me.WTXT_TO.MaxLength = 0
@@ -468,6 +515,7 @@ Partial Class FRM_EM_2_BI
         Me.WTXT_FROM.BackColor = System.Drawing.Color.White
         Me.WTXT_FROM.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.WTXT_FROM.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.WTXT_FROM.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DTSERVERDATEBindingSource, "CUR_DATE", True))
         Me.WTXT_FROM.Font = New System.Drawing.Font("Bahnschrift Condensed", 11.25!)
         Me.WTXT_FROM.Location = New System.Drawing.Point(9, 10)
         Me.WTXT_FROM.MaxLength = 0
@@ -477,6 +525,15 @@ Partial Class FRM_EM_2_BI
         Me.WTXT_FROM.Text = "MM/DD/YYYY"
         Me.WTXT_FROM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.WTXT_FROM.Watermark = "MM/DD/YYYY"
+        '
+        'DTSERVERDATEBindingSource
+        '
+        Me.DTSERVERDATEBindingSource.DataMember = "DT_SERVERDATE"
+        Me.DTSERVERDATEBindingSource.DataSource = Me.DS_STOREDPROC
+        '
+        'DT_SERVERDATETableAdapter
+        '
+        Me.DT_SERVERDATETableAdapter.ClearBeforeFill = True
         '
         'FRM_EM_2_BI
         '
@@ -500,18 +557,21 @@ Partial Class FRM_EM_2_BI
         Me.PNL1.PerformLayout()
         Me.PNL3.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
+        Me.Panel9.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
-        Me.PNL_CUSTOM.ResumeLayout(False)
-        Me.PNL_CUSTOM.PerformLayout()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
+        Me.PNL_CUSTOM.ResumeLayout(False)
+        Me.PNL_CUSTOM.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
-        Me.Panel9.ResumeLayout(False)
+        CType(Me.DS_STOREDPROC, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPM4_TRP_LISTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DTSERVERDATEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -548,5 +608,12 @@ Partial Class FRM_EM_2_BI
     Friend WithEvents Panel5 As Panel
     Friend WithEvents BTN_SEND_EMAIL As Button
     Friend WithEvents Panel9 As Panel
-    Friend WithEvents Button2 As Button
+    Friend WithEvents BTN_VIEW_LOGS As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents TableAdapterManager As DS_TABLESTableAdapters.TableAdapterManager
+    Friend WithEvents DS_STOREDPROC As DS_STOREDPROC
+    Friend WithEvents SPM4_TRP_LISTBindingSource As BindingSource
+    Friend WithEvents SPM4_TRP_LISTTableAdapter As DS_STOREDPROCTableAdapters.SPM4_TRP_LISTTableAdapter
+    Friend WithEvents DTSERVERDATEBindingSource As BindingSource
+    Friend WithEvents DT_SERVERDATETableAdapter As DS_STOREDPROCTableAdapters.DT_SERVERDATETableAdapter
 End Class

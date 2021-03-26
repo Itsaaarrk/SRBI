@@ -234,4 +234,9 @@ Module MD_GLOBALVAR
     Public RECF_BY As String
     Public RECF_POS As String
     Public _REMARKS As String
+    Public P_TXT_SEARCH As String
+    Public P_WTXT_FROM As String
+    Public P_WTXT_TO As String
+    Public P_INDEX As Integer
+    Public P_CBY As String
 End Module

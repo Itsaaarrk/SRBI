@@ -47,7 +47,13 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>PRAicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\PRA Procurement Information System 2\PRA PIS\bin\x86\Debug\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
@@ -67,6 +73,9 @@
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\PRA Procurement Information System 2\PRA PIS\bin\x86\Debug\FlashControlV71.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="kodakscansdk">
       <HintPath>..\..\..\PRA Procurement Information System 2\PRA PIS\bin\x86\Debug\kodakscansdk.dll</HintPath>
@@ -111,6 +120,12 @@
     <Reference Include="TWAINCSToolkit">
       <HintPath>..\..\..\PRA Procurement Information System 2\PRA PIS\bin\x86\Debug\TWAINCSToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net461\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net461\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -153,6 +168,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_PRAJO_DATABASE.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DATASETS\DS_STOREDPROC.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_STOREDPROC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DATASETS\DS_TABLES.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -163,11 +183,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_VIEWS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="FRM_EM_2_BI.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="FRM_EM_2_BI.Designer.vb">
+      <DependentUpon>FRM_EM_2_BI.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_PREVIEW.Designer.vb">
+      <DependentUpon>FRM_PREVIEW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_PREVIEW.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_RET_LOGS.Designer.vb">
+      <DependentUpon>FRM_RET_LOGS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_RET_LOGS.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GLOBAL_MODULE\MD_GLOBALMOD.vb" />
@@ -205,10 +237,22 @@
     <Compile Include="POPUP_MODULE\FRM_DISCONNECTED.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RPT_TPL.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_TPL.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="FRM_EM_2_BI.resx">
+      <DependentUpon>FRM_EM_2_BI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_PREVIEW.resx">
+      <DependentUpon>FRM_PREVIEW.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_RET_LOGS.resx">
+      <DependentUpon>FRM_RET_LOGS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN\FRM_LOGIN.resx">
       <DependentUpon>FRM_LOGIN.vb</DependentUpon>
@@ -225,6 +269,10 @@
     <EmbeddedResource Include="POPUP_MODULE\FRM_DISCONNECTED.resx">
       <DependentUpon>FRM_DISCONNECTED.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPT_TPL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_TPL.vb</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="DATASETS\DS_PRAJO_DATABASE.xsc">
@@ -237,6 +285,17 @@
     </None>
     <None Include="DATASETS\DS_PRAJO_DATABASE.xss">
       <DependentUpon>DS_PRAJO_DATABASE.xsd</DependentUpon>
+    </None>
+    <None Include="DATASETS\DS_STOREDPROC.xsc">
+      <DependentUpon>DS_STOREDPROC.xsd</DependentUpon>
+    </None>
+    <None Include="DATASETS\DS_STOREDPROC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_STOREDPROC.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DATASETS\DS_STOREDPROC.xss">
+      <DependentUpon>DS_STOREDPROC.xsd</DependentUpon>
     </None>
     <None Include="DATASETS\DS_TABLES.xsc">
       <DependentUpon>DS_TABLES.xsd</DependentUpon>
@@ -272,6 +331,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\round_vpn_key_black_18dp.png" />
   </ItemGroup>
   <ItemGroup>
@@ -294,6 +354,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\outline_search_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_print_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_settings_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PIS.ico" />
+    <Content Include="PRAicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

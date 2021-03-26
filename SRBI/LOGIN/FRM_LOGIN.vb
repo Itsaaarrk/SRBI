@@ -57,7 +57,7 @@
                         EMP_POSITION = V1VW_USERACCEMPLOYEETableAdapter.SQ_POSITION(Trim(TXT_USERNAME.Text)).ToUpper
                         USER_DIVISION = V1VW_USERACCEMPLOYEETableAdapter.SQ_DIVISION_DESC(Trim(TXT_USERNAME.Text))
                         '  MDI_Mainform.Show()
-                        FRM_EM_2_BI.Show()
+                        FRM_RET_LOGS.Show()
                         Me.Hide()
                     Else
                         NotificationManager.Show(Me, "INVALID USERNAME OR PASSWORD!", Color.Red, 3000)
